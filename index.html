@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Seu Nome</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.7;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #334155;
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: #38bdf8;
+      border-radius: 50%;
+    }
+
+    .project {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Seu Nome</h1>
+    <p>Unity Developer | C# | Multiplayer</p>
+  </header>
+
+  <section>
+    <h2>📅 Timeline</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>2026</h3>
+
+        <div class="project">
+          <h3>Sistema de Inventário</h3>
+          <p>Arquitetura modular com ScriptableObjects e drag & drop.</p>
+          <a href="#">Ver no GitHub</a>
+        </div>
+
+        <div class="project">
+          <h3>Multiplayer Prototype</h3>
+          <p>Sincronização de estado usando Netcode for GameObjects.</p>
+          <a href="#">Ver no GitHub</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3>2025</h3>
+
+        <div class="project">
+          <h3>UI System</h3>
+          <p>Sistema reutilizável de UI com animações.</p>
+          <a href="#">Ver no GitHub</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 Skills</h2>
+    <p>Unity, C#, Multiplayer, UI Systems, Game Architecture</p>
+  </section>
+
+  <section>
+    <h2>📬 Contato</h2>
+    <p>Email: seuemail@email.com</p>
+  </section>
+
+  <footer>
+    <p>© 2026 - Seu Nome</p>
+  </footer>
+
+</body>
+</html>
