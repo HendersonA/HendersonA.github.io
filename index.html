@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="index.css">
     <!-- Lucide Icons for small accents -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Automatic Language Routing -->
+    <script>
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var langParam = urlParams.get('lang');
+            
+            try {
+                if (langParam) localStorage.setItem('langPref', langParam);
+            } catch(e) {}
+            
+            var pref = langParam;
+            try {
+                if (!pref) pref = localStorage.getItem('langPref');
+            } catch(e) {}
+
+            var browserLang = navigator.language || navigator.userLanguage;
+            
+            if (pref === 'pt' || (!pref && browserLang && browserLang.toLowerCase().startsWith('pt'))) {
+                window.location.replace('index-pt.html?lang=pt');
+            }
+        })();
+    </script>
 </head>
 <nav class="nav-bar">
     <div class="container nav-container">
@@ -17,6 +40,11 @@
         <a href="#hero-project" class="nav-link">Featured</a>
         <a href="#projects" class="nav-link">Portfolio</a>
         <a href="#experience" class="nav-link">Experience</a>
+        <div style="display: flex; gap: 0.5rem; font-size: 0.9rem; align-items: center; margin-left: 1rem;">
+            <a href="index.html?lang=en" style="color: var(--accent-cyan); font-weight: 700; text-decoration: none;">EN</a>
+            <span style="color: var(--glass-border);">|</span>
+            <a href="index-pt.html?lang=pt" style="color: var(--text-secondary); text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">PT</a>
+        </div>
     </div>
 </nav>
 

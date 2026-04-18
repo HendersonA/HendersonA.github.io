@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henderson Martins | Portfólio de Desenvolvedor Unity Sênior</title>
+    <meta name="description"
+        content="Portfólio de Henderson Martins, Desenvolvedor Unity Sênior especializado em sistemas escaláveis, otimização mobile e desenvolvimento AR.">
+    <link rel="stylesheet" href="index.css">
+    <!-- Lucide Icons for small accents -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Automatic Language Routing -->
+    <script>
+        (function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var langParam = urlParams.get('lang');
+
+            try {
+                if (langParam) localStorage.setItem('langPref', langParam);
+            } catch (e) { }
+
+            var pref = langParam;
+            try {
+                if (!pref) pref = localStorage.getItem('langPref');
+            } catch (e) { }
+
+            var browserLang = navigator.language || navigator.userLanguage;
+
+            if (pref === 'en' || (!pref && browserLang && !browserLang.toLowerCase().startsWith('pt'))) {
+                window.location.replace('index.html?lang=en');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <a href="#tech-stack" class="nav-link">Especialidades</a>
+            <a href="#hero-project" class="nav-link">Destaque</a>
+            <a href="#projects" class="nav-link">Portfólio</a>
+            <a href="#experience" class="nav-link">Experiência</a>
+            <div style="display: flex; gap: 0.5rem; font-size: 0.9rem; align-items: center; margin-left: 1rem;">
+                <a href="index.html?lang=en"
+                    style="color: var(--text-secondary); text-decoration: none; transition: 0.3s;"
+                    onmouseover="this.style.color='var(--accent-cyan)'"
+                    onmouseout="this.style.color='var(--text-secondary)'">EN</a>
+                <span style="color: var(--glass-border);">|</span>
+                <a href="index-pt.html?lang=pt"
+                    style="color: var(--accent-cyan); font-weight: 700; text-decoration: none;">PT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="profile-img-container">
+                <img src="assets/profile_photo.jpg" alt="Henderson Martins" class="profile-img">
+            </div>
+            <h1>Henderson Martins</h1>
+            <p>Desenvolvedor de Jogos Unity Sênior | Especialista em Sistemas</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a href="assets/Henderson_Martins_Resume.pdf" target="_blank" class="btn btn-secondary"
+                    style="margin-left: 1rem; color: #fff; text-decoration: none;">Currículo (PDF)</a>
+            </div>
+            <div class="core-competencies">
+                <div class="competence-chip"><i data-lucide="code-2" style="width:16px;"></i> C# & Unity Engine</div>
+                <div class="competence-chip"><i data-lucide="cpu" style="width:16px;"></i> Arquitetura de Sistemas
+                    (SOLID)</div>
+                <div class="competence-chip"><i data-lucide="smartphone" style="width:16px;"></i> Otimização Mobile
+                </div>
+                <div class="competence-chip"><i data-lucide="line-chart" style="width:16px;"></i> Monetização &
+                    Analytics</div>
+                <div class="competence-chip"><i data-lucide="git-merge" style="width:16px;"></i> Controle de Versão
+                    (Git)</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="tech-stack">
+        <div class="container section-content">
+            <h2 class="section-title">Principais Especialidades</h2>
+            <div class="projects-grid">
+                <div class="glass timeline-content">
+                    <i data-lucide="layers" style="color: var(--accent-blue);"></i>
+                    <h3>Arquitetura de Sistemas</h3>
+                    <p>Engenharia de mecânicas robustas e desacopladas usando ScriptableObjects, padrões Event-Driven e
+                        design baseado em componentes (ECS) para garantir a escalabilidade da base de código a longo
+                        prazo.</p>
+                </div>
+                <div class="glass timeline-content">
+                    <i data-lucide="smartphone" style="color: var(--accent-blue);"></i>
+                    <h3>Desempenho e Otimização</h3>
+                    <p>Ampla experiência com gerenciamento de memória, CPU profiling e redução de tamanho através de
+                        Addressables, garantindo altas taxas de quadros e estabilidade de memória em diversos hardwares
+                        mobile.</p>
+                </div>
+                <div class="glass timeline-content">
+                    <i data-lucide="cpu" style="color: var(--accent-blue);"></i>
+                    <h3>Integração de Backend e SDKs</h3>
+                    <p>Integração de infraestrutura crucial para o ecossistema do jogo, desde serviços de live-ops
+                        (Unity Gaming Services, Firebase) a SDKs complexos de monetização, publicação e analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hero-project">
+        <div class="container section-content">
+            <h2 class="section-title">Projeto Destaque: DATA2073</h2>
+            <div class="glass hero-project-card">
+                <div class="project-visual">
+                    <video autoplay muted loop playsinline poster="assets/projects/Data2073/thumbnail.png">
+                        <source src="assets/projects/Data2073/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="hero-project-info">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">DATA2073</h3>
+                    <div class="tech-tags">
+                        <span class="tech-chip">Sistemas de Jogo</span>
+                        <span class="tech-chip">Ferramentas de Editor</span>
+                        <span class="tech-chip">Addressables</span>
+                    </div>
+                    <p><strong>Função: Desenvolvedor Unity Sênior</strong></p>
+                    <p>Um jogo de cartas estratégico PvP em um futuro distópico. Como arquiteto líder, liderei os ciclos
+                        de progressão principais, projetando a UI da Campanha, estrutura do Passe de Temporada e lógica
+                        extensível de distribuição de recompensas. Também assumi o ciclo técnico de lançamento, focando
+                        em otimização agressiva e automação de fluxos de trabalho.</p>
+                    <ul style="list-style: none; margin-bottom: 2rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                                style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i>
+                            <strong>Otimização:</strong> Reduzi o tamanho da build de 800MB para 320MB através do uso de
+                            Addressables.</li>
+                        <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                                style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i>
+                            <strong>Automação:</strong> Programei Ferramentas Customizadas de Editor para validação de
+                            assets e troca rápida de ambientes.</li>
+                        <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                                style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i>
+                            <strong>Lançamento:</strong> Gerenciei todo o fluxo de build e implantação da versão Android
+                            na Google Play.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.ostengames.Data2073" target="_blank"
+                            class="project-link">Play Store</a>
+                        <a href="https://store.epicgames.com/pt-BR/p/data2073-9d83d4" target="_blank"
+                            class="project-link">Epic Games</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container section-content">
+            <h2 class="section-title">Projetos Selecionados</h2>
+            <div class="projects-grid">
+                <!-- Kain Kobra -->
+                <div class="glass project-card">
+                    <div class="project-visual">
+                        <video muted loop playsinline poster="assets/projects/Kain_Kobra/thumbnail.png">
+                            <source src="assets/projects/Kain_Kobra/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Kain Cobra</h3>
+                        <div class="tech-tags">
+                            <span class="tech-chip">Sistemas de Progressão</span>
+                            <span class="tech-chip">Event-Driven</span>
+                            <span class="tech-chip">Multiplataforma</span>
+                        </div>
+                        <p style="margin-bottom: 0.5rem;"><strong>Função: Desenvolvedor Unity</strong></p>
+                        <p>Projeto de ação de larga escala lançado para WebGL e Android. Projetei mecânicas abrangentes
+                            de progressão orientadas a <strong>ScriptableObjects</strong>, englobando lógicas complexas
+                            de inventário, árvores de habilidades/talentos, tabelas de loot e máquinas de estado de IA
+                            de chefes. Além disso, gerenciei a integração de importantes SDKs de Anúncios e Analytics.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://67bits.itch.io/kain-cobra-ab" target="_blank"
+                                class="project-link">itch.io</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elves Clan -->
+                <div class="glass project-card">
+                    <div class="project-visual">
+                        <video muted loop playsinline poster="assets/projects/Elves_Clan/thumbnail.jpg">
+                            <source src="assets/projects/Elves_Clan/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Elves Clan: Tricky Adventures</h3>
+                        <div class="tech-tags">
+                            <span class="tech-chip">Pipeline Multiplataforma</span>
+                            <span class="tech-chip">Localização</span>
+                            <span class="tech-chip">Profiling de Desempenho</span>
+                        </div>
+                        <p style="margin-bottom: 0.5rem;"><strong>Função: Desenvolvedor Unity</strong></p>
+                        <p>Plataforma 2D responsivo lançado globalmente (WebGL, Android, iOS e Windows PC). Desenvolvi
+                            os sistemas essenciais de localização, estruturação dinâmica de UI no canvas e executei
+                            extensivo profiling e de CPU/GPU para garantir framerates perfeitos na grande maioria dos
+                            aparelhos low-end do mercado.</p>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.sixtysevenbits.elvesclanseasons"
+                                target="_blank" class="project-link">Android</a>
+                            <a href="https://67bits.itch.io/elves-clan-tricky-adventures" target="_blank"
+                                class="project-link">itch.io</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Zombie World -->
+                <div class="glass project-card">
+                    <div class="project-visual">
+                        <video muted loop playsinline poster="assets/projects/My_Zombie_World/thumbnail.jpg">
+                            <source src="assets/projects/My_Zombie_World/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>My Zombie World</h3>
+                        <div class="tech-tags">
+                            <span class="tech-chip">Job System (ECS)</span>
+                            <span class="tech-chip">Streaming c/ Addressables</span>
+                            <span class="tech-chip">Testes Automatizados</span>
+                        </div>
+                        <p style="margin-bottom: 0.5rem;"><strong>Função: Desenvolvedor Unity</strong></p>
+                        <p>Híbrido de sobrevivência em mundo aberto. Projetei um <strong>Sistema de Componentes de
+                                Entidades (Job System)</strong> da Unity focado em performance absoluta para a IA dos
+                            Zumbis, otimizando a simultaneidade de 10 entidades a 20fps para incríveis <strong>100
+                                entidades a estáveis 60fps</strong>. Integrei Addressables para streaming veloz de
+                            vastos trechos do cenário.</p>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.sixtysevenbits.zombieworld"
+                                target="_blank" class="project-link">Play Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serra Verde AR -->
+                <div class="glass project-card">
+                    <div class="project-visual">
+                        <img src="assets/projects/Serra_Verde_AR/thumbnail.jpg" alt="Serra Verde Express AR"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 1;">
+                    </div>
+                    <div class="project-info">
+                        <h3>Serra Verde Express AR</h3>
+                        <div class="tech-tags">
+                            <span class="tech-chip">AR/XR</span>
+                            <span class="tech-chip">Vuforia</span>
+                            <span class="tech-chip">Performance Mobile</span>
+                        </div>
+                        <p style="margin-bottom: 0.5rem;"><strong>Função: Desenvolvedor Unity</strong></p>
+                        <p>Imersiva experiência de Realidade Aumentada. Responsável por garantir a precisão no
+                            rastreamento entre a vida real e os marcadores (câmera-marcador) bem como o rastreamento em
+                            tempo real do trem com total performance em iOS.</p>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/br/app/serra-verde-express/id1588783273" target="_blank"
+                                class="project-link">App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container section-content contact-section">
+            <h2 class="section-title">Pronto Para Construir Algo Incrível?</h2>
+            <div class="glass contact-card">
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2rem;">
+                    Estou sempre aberto a conversar sobre novas oportunidades, discussões e desafios técnicos ou para
+                    falar sobre o futuro do desenvolvimento na área de jogos e engenharia de software.
+                </p>
+                <div class="contact-grid">
+                    <a href="assets/Henderson_Martins_Resume.pdf" target="_blank" class="contact-item">
+                        <i data-lucide="file-text"></i>
+                        <span>Currículo (PDF)</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/henderson-martins-973264118" target="_blank"
+                        class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/HendersonA" target="_blank" class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-github">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:henderson.aryel95@gmail.com" class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <span>Enviar E-mail</span>
+                    </a>
+                </div>
+                <a href="mailto:henderson.aryel95@gmail.com" class="btn btn-primary" style="margin-top: 2rem;">Iniciar
+                    Conversa</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container section-content">
+            <h2 class="section-title">Jornada Profissional</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="glass timeline-content">
+                        <span style="display: block; margin-bottom: 0.5rem; font-weight: 700;">Abr 2025 - Fev
+                            2026</span>
+                        <h3>Osten Games</h3>
+                        <p>Desenvolvedor Unity. Responsável pelos principais sistemas de gameplay e pela estabilização
+                            do pipeline de compilação (Unity Build Automation).</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="glass timeline-content">
+                        <span style="display: block; margin-bottom: 0.5rem; font-weight: 700;">Mar 2023 - Fev
+                            2025</span>
+                        <h3>67 Bits</h3>
+                        <p>Desenvolvedor Unity. Especializado em interfaces (UI) responsivas e mecânicas de jogos mobile
+                            para diversos mercados globais.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="glass timeline-content">
+                        <span style="display: block; margin-bottom: 0.5rem; font-weight: 700;">Ago 2021 - Jan
+                            2023</span>
+                        <h3>Kepha</h3>
+                        <p>Desenvolvedor Unity. Focado na implementação de funcionalidades principais e no
+                            desenvolvimento de protótipos AR/XR utilizando Vuforia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 4rem 0; border-top: 1px solid var(--glass-border);">
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">© 2026 Henderson Martins</p>
+            <p style="color: var(--text-secondary); font-size: 0.8rem; opacity: 0.6;">Portfólio | Desenvolvedor Unity
+                Sênior</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
