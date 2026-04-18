@@ -125,11 +125,12 @@ section {
     gap: 3rem;
 }
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px; /* Provides breathing room from the nav bar */
 }
 
 .hero-content {
@@ -165,7 +166,7 @@ section {
 .hero p {
     font-size: 1.5rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem; /* Reduced to bring buttons closer */
 }
 
 .btn {
@@ -188,6 +189,47 @@ section {
     box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
 }
 
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.core-competencies {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.competence-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
 /* Projects Grid */
 .section-title {
     font-size: 2.8rem;
@@ -201,6 +243,11 @@ section {
     gap: 2rem; 
     overflow: hidden; 
     padding: 0;
+}
+
+.hero-project-card .project-visual {
+    height: 100%;
+    min-height: 220px;
 }
 
 .hero-project-info {
@@ -255,7 +302,28 @@ section {
 .project-info p {
     color: var(--text-secondary);
     font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
     margin-bottom: 1.5rem;
+}
+
+.tech-chip {
+    padding: 0.4rem 0.9rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .project-links {
@@ -325,11 +393,13 @@ section {
 }
 
 .left::after {
-    right: -10px;
+    left: 100%;
+    transform: translateX(-50%);
 }
 
 .right::after {
-    left: -10px;
+    left: 0;
+    transform: translateX(-50%);
 }
 
 .timeline-content {
@@ -347,6 +417,47 @@ section {
 }
 
 /* Responsive Styles */
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item i {
+    width: 32px;
+    height: 32px;
+    color: var(--accent-cyan);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    color: var(--accent-cyan);
+}
+
 /* Reveal Animations */
 .reveal-hidden {
     opacity: 0;
@@ -360,9 +471,42 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+    /* Navigation Mobile Fix */
+    .nav-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+    }
+    .nav-link {
+        font-size: 0.8rem;
+    }
+    
+    /* Hero Mobile Overlap Fix */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 3rem;
+    }
     .hero h1 { font-size: 3rem; }
+    
+    .hero-project-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-project-card .project-visual {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .hero-project-info {
+        padding: 2rem;
+    }
+    
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-    .timeline-item::after { left: 23px; }
+    .timeline-item::after { left: 31px; transform: translateX(-50%); }
+    .left::after, .right::after { left: 31px; transform: translateX(-50%); }
     .right { left: 0%; }
 }

@@ -31,11 +31,18 @@
             <img src="assets/profile_photo.jpg" alt="Henderson Martins" class="profile-img">
         </div>
         <h1>Henderson Martins</h1>
-        <p>Unity Game Developer | Game Systems Specialist</p>
+        <p>Senior Unity Game Developer | Game Systems Specialist</p>
         <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#experience" class="btn glass"
-                style="margin-left: 1rem; color: #fff; text-decoration: none;">Experience</a>
+            <a href="assets/Henderson_Martins_Resume.pdf" target="_blank" class="btn btn-secondary"
+                style="margin-left: 1rem; color: #fff; text-decoration: none;">Resume (PDF)</a>
+        </div>
+        <div class="core-competencies">
+            <div class="competence-chip"><i data-lucide="code-2" style="width:16px;"></i> C# & Unity Engine</div>
+            <div class="competence-chip"><i data-lucide="cpu" style="width:16px;"></i> System Architecture (SOLID)</div>
+            <div class="competence-chip"><i data-lucide="smartphone" style="width:16px;"></i> Mobile Optimization</div>
+            <div class="competence-chip"><i data-lucide="line-chart" style="width:16px;"></i> Monetization & Analytics</div>
+            <div class="competence-chip"><i data-lucide="git-merge" style="width:16px;"></i> Version Control (Git)</div>
         </div>
     </div>
 </header>
@@ -46,21 +53,18 @@
         <div class="projects-grid">
             <div class="glass timeline-content">
                 <i data-lucide="layers" style="color: var(--accent-blue);"></i>
-                <h3>Game Systems</h3>
-                <p>Architecting scalable solutions like Season Pass, Quest Systems, and Deck Management with a focus on
-                    maintainability.</p>
+                <h3>Systems Architecture</h3>
+                <p>Engineering robust, decoupled mechanics using ScriptableObjects, Event-Driven patterns, and component-based design (ECS) to ensure long-term codebase scalability.</p>
             </div>
             <div class="glass timeline-content">
                 <i data-lucide="smartphone" style="color: var(--accent-blue);"></i>
-                <h3>Mobile Optimization</h3>
-                <p>Expertise in responsive UI, building assets for diverse screen ratios, and managing mobile
-                    performance (Xsolla SDK integration).</p>
+                <h3>Performance & Optimization</h3>
+                <p>Deep experience with memory management, CPU profiling, and footprint reduction via Addressables, ensuring high framerates and stable memory across diverse mobile hardware.</p>
             </div>
             <div class="glass timeline-content">
                 <i data-lucide="cpu" style="color: var(--accent-blue);"></i>
-                <h3>Build Automation</h3>
-                <p>Transitioning pipelines from Jenkins to Unity Build Automation, streamlining Android/iOS deployment
-                    and code signing.</p>
+                <h3>Backend & SDK Integration</h3>
+                <p>Integrating crucial ecosystem infrastructure, ranging from live-ops backend services (Unity Gaming Services, Firebase) to complex monetization, publishing, and analytics SDKs.</p>
             </div>
         </div>
     </div>
@@ -78,16 +82,20 @@
             </div>
             <div class="hero-project-info">
                 <h3 style="font-size: 2rem; margin-bottom: 1rem;">DATA2073</h3>
-                <p>A strategic card game set in a dystopian future. This project showcases the integration of complex
-                    SDKs including <strong>Xsolla Payments</strong> and <strong>Web3 logic</strong> into a decoupled,
-                    scalable architecture.</p>
+                <div class="tech-tags">
+                    <span class="tech-chip">Gameplay Systems</span>
+                    <span class="tech-chip">Custom Editor Tools</span>
+                    <span class="tech-chip">Addressables</span>
+                </div>
+                <p><strong>Role: Senior Unity Developer</strong></p>
+                <p>A strategic PvP card game set in a dystopian future. As the lead systems architect, I spearheaded the core progression loops, designing the Campaign UI, Season Pass framework, and extensible reward distribution logic. I also owned the technical deployment lifecycle, focusing on aggressive footprint optimization and workflow automation.</p>
                 <ul style="list-style: none; margin-bottom: 2rem; color: var(--text-secondary);">
-                    <li style="margin-bottom: 0.5rem;"><i data-lucide="check"
-                            style="width: 16px; margin-right: 8px;"></i> Distributed backend integration</li>
-                    <li style="margin-bottom: 0.5rem;"><i data-lucide="check"
-                            style="width: 16px; margin-right: 8px;"></i> Decoupled payment module</li>
-                    <li style="margin-bottom: 0.5rem;"><i data-lucide="check"
-                            style="width: 16px; margin-right: 8px;"></i> High-fidelity UI animations</li>
+                    <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                            style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i> <strong>Optimization:</strong> Shrank core build size from 800MB to 320MB using Dynamic Addressables.</li>
+                    <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                            style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i> <strong>Automation:</strong> Authored Custom Editor Tools for fast environment switching and asset validation.</li>
+                    <li style="margin-bottom: 0.5rem;"><i data-lucide="zap"
+                            style="width: 16px; margin-right: 8px; color: var(--accent-cyan);"></i> <strong>Deployment:</strong> Managed the end-to-end Android build and release pipeline on Google Play.</li>
                 </ul>
                 <div class="project-links">
                     <a href="https://play.google.com/store/apps/details?id=com.ostengames.Data2073" target="_blank"
@@ -113,8 +121,13 @@
                 </div>
                 <div class="project-info">
                     <h3>Kain Cobra</h3>
-                    <p>Large-scale mobile action project. Implemented core inventory, upgrade systems, skill trees, and
-                        level building mechanics.</p>
+                    <div class="tech-tags">
+                        <span class="tech-chip">Progression Systems</span>
+                        <span class="tech-chip">Event-Driven</span>
+                        <span class="tech-chip">Cross-Platform</span>
+                    </div>
+                    <p style="margin-bottom: 0.5rem;"><strong>Role: Unity Developer</strong></p>
+                    <p>Large-scale action project shipped to WebGL and Android. Engineered comprehensive, <strong>ScriptableObject-driven</strong> progression mechanics encompassing complex inventory logic, skill/talent trees, loot tables, and boss AI state machines. Additionally, integrated crucial Ad and Analytics SDKs to track monetization metrics.</p>
                     <div class="project-links">
                         <a href="https://67bits.itch.io/kain-cobra-ab" target="_blank" class="project-link">itch.io</a>
                     </div>
@@ -130,8 +143,13 @@
                 </div>
                 <div class="project-info">
                     <h3>Elves Clan: Tricky Adventures</h3>
-                    <p>Highly responsive 2D platformer. Focused on UI optimization for hundreds of Android devices and
-                        responsive canvas scaling.</p>
+                    <div class="tech-tags">
+                        <span class="tech-chip">Cross-Platform Pipeline</span>
+                        <span class="tech-chip">Localization</span>
+                        <span class="tech-chip">Performance Profiling</span>
+                    </div>
+                    <p style="margin-bottom: 0.5rem;"><strong>Role: Unity Developer</strong></p>
+                    <p>Highly responsive 2D platformer deployed globally across WebGL, Android, iOS, and PC Windows. Developed core localization systems, runtime UI scaling logic, and performed extensive CPU/GPU profiling to maintain consistent framerates across low-end mobile devices.</p>
                     <div class="project-links">
                         <a href="https://play.google.com/store/apps/details?id=com.sixtysevenbits.elvesclanseasons"
                             target="_blank" class="project-link">Android</a>
@@ -150,8 +168,13 @@
                 </div>
                 <div class="project-info">
                     <h3>My Zombie World</h3>
-                    <p>Management/Survival hybrid. Implemented physics-based interactions and automated testing using
-                        the Unity Test Framework.</p>
+                    <div class="tech-tags">
+                        <span class="tech-chip">Job System (ECS)</span>
+                        <span class="tech-chip">Addressables Streaming</span>
+                        <span class="tech-chip">Automated Testing</span>
+                    </div>
+                    <p style="margin-bottom: 0.5rem;"><strong>Role: Unity Developer</strong></p>
+                    <p>Open-world survival hybrid. Engineered a high-performance <strong>Entity Component System (Job System)</strong> for Zombie AI, exponentially optimizing concurrency from 10 zombies at 20fps to <strong>100 zombies at a stable 60fps</strong>. Integrated Addressables to seamlessly stream large scenery chunks in and out of mobile memory.</p>
                     <div class="project-links">
                         <a href="https://play.google.com/store/apps/details?id=com.sixtysevenbits.zombieworld"
                             target="_blank" class="project-link">Play Store</a>
@@ -167,14 +190,64 @@
                 </div>
                 <div class="project-info">
                     <h3>Serra Verde Express AR</h3>
-                    <p>Immersive Augmented Reality experience using Vuforia. Managing mobile camera performance and
-                        marker tracking accuracy.</p>
+                    <div class="tech-tags">
+                        <span class="tech-chip">AR/XR</span>
+                        <span class="tech-chip">Vuforia</span>
+                        <span class="tech-chip">Mobile Performance</span>
+                    </div>
+                    <p style="margin-bottom: 0.5rem;"><strong>Role: Unity Developer</strong></p>
+                    <p>Immersive Augmented Reality experience. Managed cam-to-marker tracking accuracy and mobile camera
+                        performance for real-time train tracking.</p>
                     <div class="project-links">
                         <a href="https://apps.apple.com/br/app/serra-verde-express/id1588783273" target="_blank"
                             class="project-link">App Store</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container section-content contact-section">
+        <h2 class="section-title">Ready to Build Something Incredible?</h2>
+        <div class="glass contact-card">
+            <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2rem;">
+                I'm always open to discussing new opportunities, technical challenges, or the future of game
+                development.
+            </p>
+            <div class="contact-grid">
+                <a href="assets/Henderson_Martins_Resume.pdf" target="_blank" class="contact-item">
+                    <i data-lucide="file-text"></i>
+                    <span>Resume (PDF)</span>
+                </a>
+                <a href="https://www.linkedin.com/in/henderson-martins-973264118" target="_blank" class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/HendersonA" target="_blank" class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-github">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:henderson.aryel95@gmail.com" class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <span>Email Me</span>
+                </a>
+            </div>
+            <a href="mailto:henderson.aryel95@gmail.com" class="btn btn-primary" style="margin-top: 2rem;">Start a
+                Conversation</a>
         </div>
     </div>
 </section>
@@ -212,13 +285,10 @@
 </section>
 
 <footer>
-    <div class="container" style="text-align: center; padding: 4rem 0;">
-        <p style="color: var(--text-secondary); margin-bottom: 1rem;">© 2026 Henderson Martins</p>
-        <div style="display: flex; justify-content: center; gap: 2rem;">
-            <a href="https://github.com" target="_blank" class="project-link">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" class="project-link">LinkedIn</a>
-            <a href="mailto:contact@henderson.com" class="project-link">Email</a>
-        </div>
+    <div class="container" style="text-align: center; padding: 4rem 0; border-top: 1px solid var(--glass-border);">
+        <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">© 2026 Henderson Martins</p>
+        <p style="color: var(--text-secondary); font-size: 0.8rem; opacity: 0.6;">Senior Unity Game Developer Portfolio
+        </p>
     </div>
 </footer>
 
