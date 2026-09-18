@@ -257,9 +257,23 @@ footer { border-top: 1px solid var(--border); margin-top: 1rem; padding: 1.2rem 
     .hero-project-card { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
     .skills-grid { grid-template-columns: 1fr; }
-    body[data-cards="linhas"] .project-card, body[data-cards="editorial"] .project-card:first-child { grid-template-columns: 1fr; }
-    body[data-cards="linhas"] .project-visual { min-height: 0; height: auto; }
+    body[data-cards="linhas"] .project-card, body[data-cards="editorial"] .project-card:first-child { grid-template-columns: 38% 1fr; }
+    body[data-cards="linhas"] .project-visual, body[data-cards="editorial"] .project-card:first-child .project-visual { height: 100%; min-height: 120px; }
+    body[data-cards="linhas"] .project-visual img, body[data-cards="linhas"] .project-visual video,
+    body[data-cards="editorial"] .project-card:first-child .project-visual img, body[data-cards="editorial"] .project-card:first-child .project-visual video { object-fit: cover; }
     body[data-cards="editorial"] .projects-grid { grid-template-columns: 1fr; }
+    /* Textos mobile com tamanho ajustado (vale no padrao e no vertical) */
+    body[data-cards="linhas"] .project-info, body[data-cards="editorial"] .project-info { padding: 1rem; }
+    body[data-cards="linhas"] .project-info h3, body[data-cards="editorial"] .project-info h3 { font-size: 1rem; }
+    body[data-cards="linhas"] .project-info p, body[data-cards="editorial"] .project-info p { font-size: 0.82rem; margin-bottom: 0.7rem; }
+    body[data-cards="linhas"] .project-links, body[data-cards="editorial"] .project-links { gap: 0.6rem; }
+    body[data-cards="linhas"] .project-link, body[data-cards="editorial"] .project-link { font-size: 0.78rem; }
+    /* Overlay no mobile vira card normal: texto abaixo da imagem, sem sobrepor */
+    body[data-cards="overlay"] .project-card { display: block; }
+    body[data-cards="overlay"] .project-visual { height: auto; aspect-ratio: 16 / 9; }
+    body[data-cards="overlay"] .project-info { position: static; background: var(--card); color: var(--ink); padding: 1.5rem; }
+    body[data-cards="overlay"] .project-info p, body[data-cards="overlay"] .project-info h3 { color: inherit; }
+    body[data-cards="overlay"] .project-link { color: var(--ink); }
     .theme-dock { left: 1rem; right: 1rem; width: auto; }
     /* Archive mobile Brittany: link junto ao nome, mantem Ano + Projeto */
     .archive-wrap { padding: 2.5rem 1.2rem 2rem; }
@@ -433,6 +447,7 @@ body[data-cards="editorial"] .project-card:first-child .project-visual img, body
     .archive-full .archive-mobile-links { display: block; margin-top: 0.3rem; font-size: 0.85rem; }
     /* Cabecalho Ano/Projeto gruda no topo no mobile */
     .archive-full thead th { position: sticky; top: 0; z-index: 10; background: var(--bg); }
+}
 
 /* Mobile sempre 1 coluna — inclusive no modo Brittany */
 @media screen and (max-width: 900px) {
@@ -440,3 +455,28 @@ body[data-cards="editorial"] .project-card:first-child .project-visual img, body
     body[data-layout="brittany"] .main { max-width: none; justify-self: stretch; }
     body[data-layout="brittany"] .sidebar h1 { white-space: normal; font-size: 2rem; }
 }
+
+/* Teste vertical mobile: cards classicos (imagem sobre o texto) em vez de fileira.
+   Vem por ultimo para vencer as regras de fileira acima. */
+@media screen and (max-width: 900px) {
+    body.mobile-stack .project-card { display: block; }
+    body.mobile-stack .project-visual { height: auto; min-height: 0; aspect-ratio: 16 / 9; }
+    body.mobile-stack .project-visual img, body.mobile-stack .project-visual video { object-fit: cover; }
+    body.mobile-stack .project-info { position: static; background: var(--card); color: var(--ink); padding: 1.5rem; }
+    body.mobile-stack .project-info p, body.mobile-stack .project-info h3 { color: inherit; }
+    body.mobile-stack .project-link { color: var(--ink); }
+}
+
+/* Painel de teste das thumbnails antigas (temporario) */
+.thumb-test {
+    position: fixed; left: 1rem; bottom: 1rem; z-index: 100;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.5rem 0.6rem; box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--muted);
+}
+.thumb-test button {
+    border: 1px solid var(--signal); background: transparent; color: var(--ink);
+    border-radius: 7px; padding: 0.35rem 0.6rem; font-size: 0.7rem; font-weight: 700;
+    cursor: pointer; margin-left: 0.5rem;
+}
+.thumb-test button.active { background: var(--signal); color: var(--bg); }

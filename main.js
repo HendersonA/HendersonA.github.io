@@ -305,7 +305,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     runTyping(false);
 
-    // Slider da velocidade do cursor (s) — 0 = parado visivel
+    // Painel de teste: alterna o vertical classico no mobile (imagem sobre o texto)
+    const orientBtn = document.querySelector('#thumbToggle');
+    const applyOrient = (stacked) => {
+        document.body.classList.toggle('mobile-stack', stacked);
+        if (orientBtn) {
+            orientBtn.textContent = stacked ? 'ON' : 'OFF';
+            orientBtn.classList.toggle('active', stacked);
+        }
+        try { localStorage.setItem('hbytes-mobilestack', stacked ? '1' : '0'); } catch (e) {}
+    };
+    let orientSaved = null;
+    try { orientSaved = localStorage.getItem('hbytes-mobilestack'); } catch (e) {}
+    if (orientBtn) {
+        if (orientSaved === '1') applyOrient(true);
+        orientBtn.addEventListener('click', () => {
+            applyOrient(!document.body.classList.contains('mobile-stack'));
+        });
+    } else if (orientSaved === '1') {
+        document.body.classList.add('mobile-stack');
+    }
+    // Posters responsivos: thumbnail_old no mobile (<=900px), padrao no desktop.
+    // Troca so quando cruza o breakpoint ou no load, sem reprocessar video a toa.
+    const THUMB_SWAP = [
+        ['Kain_Kobra', 'assets/projects/Kain_Kobra/thumbnail.jpg', 'assets/projects/Kain_Kobra/thumbnail_old.png'],
+        ['Elves_Clan', 'assets/projects/Elves_Clan/thumbnail.jpg', 'assets/projects/Elves_Clan/thumbnail_old.jpg'],
+        ['My_Zombie_World', 'assets/projects/My_Zombie_World/thumbnail.jpg', 'assets/projects/My_Zombie_World/thumbnail_old.jpg'],
+        ['Dungeon_Chess', 'assets/projects/Dungeon_Chess/thumbnail.png', 'assets/projects/Dungeon_Chess/thumbnail_old.png']
+    ];
+    const mqMobile = window.matchMedia('(max-width: 900px)');
+    const applyThumbSwap = () => {
+        const mobile = mqMobile.matches;
+        document.querySelectorAll('.project-visual').forEach(box => {
+            const media = box.querySelector('video, img');
+            if (!media) return;
+            const entry = THUMB_SWAP.find(([k]) => (media.getAttribute('poster') || media.getAttribute('src') || '').includes(k));
+            if (!entry) return;
+            const want = mobile ? entry[2] : entry[1];
+            if (media.getAttribute('poster') !== want) {
+                media.setAttribute('poster', want);
+                if (media.tagName === 'VIDEO') media.load();
+            }
+        });
+    };
+    if (mqMobile.addEventListener) mqMobile.addEventListener('change', applyThumbSwap);
+    else if (mqMobile.addListener) mqMobile.addListener(applyThumbSwap);
+    applyThumbSwap();
     const cursorSlider = document.querySelector('#cCursor');
     const cursorOut = document.querySelector('#cCursorVal');
     const applyCursor = (v) => {
