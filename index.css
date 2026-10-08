@@ -208,6 +208,26 @@ footer { border-top: 1px solid var(--border); margin-top: 1rem; padding: 1.2rem 
 }
 .js .project-card.reveal-active:hover { transform: translateY(-4px); transition: transform .25s ease; }
 
+/* Glow do mouse (spotlight) — mesmo efeito de brittanychiang.com: radial de 600px
+   na cor do tema seguindo o cursor. Coordenadas vem do JS via --spot-x/--spot-y;
+   sem JS o elemento nem existe. @property permite animar as coordenadas (traso suave)
+   e degrada para posicionamento instantaneo em navegador sem suporte. */
+@property --spot-x { syntax: '<length>'; inherits: false; initial-value: -1000px; }
+@property --spot-y { syntax: '<length>'; inherits: false; initial-value: -1000px; }
+.spotlight {
+    position: fixed; inset: 0; z-index: 30;
+    pointer-events: none;
+    background: radial-gradient(
+        600px circle at var(--spot-x) var(--spot-y),
+        color-mix(in srgb, var(--signal) 15%, transparent),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: --spot-x .3s ease-out, --spot-y .3s ease-out, opacity .3s ease;
+}
+.spotlight.visible { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .spotlight { display: none; } }
+
 /* Provador de paletas */
 .theme-dock {
     position: fixed; right: 1rem; bottom: 1rem; z-index: 100;

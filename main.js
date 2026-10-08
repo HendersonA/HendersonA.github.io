@@ -372,6 +372,33 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (curSaved !== null && !isNaN(Number(curSaved))) {
         document.documentElement.style.setProperty('--cursor-speed', Number(curSaved) + 's');
     }
+    // Glow do mouse (spotlight) — inspirado em brittanychiang.com.
+    // Injetado por JS: efeito decorativo, entao nao polui o HTML das 4 paginas.
+    // Só em desktop com mouse real e sem prefers-reduced-motion.
+    const canGlow = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canGlow) {
+        const glow = document.createElement('div');
+        glow.className = 'spotlight';
+        glow.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(glow);
+        let gx = -1000, gy = -1000, glowRaf = null;
+        const paintGlow = () => {
+            glowRaf = null;
+            glow.style.setProperty('--spot-x', gx + 'px');
+            glow.style.setProperty('--spot-y', gy + 'px');
+        };
+        window.addEventListener('mousemove', (e) => {
+            gx = e.clientX; gy = e.clientY;
+            if (glowRaf === null) glowRaf = requestAnimationFrame(paintGlow);
+            glow.classList.add('visible');
+        }, { passive: true });
+        // Saiu da janela (relatedTarget vazio) => apaga; volta a mover => acende.
+        document.addEventListener('mouseout', (e) => {
+            if (!e.relatedTarget) glow.classList.remove('visible');
+        });
+    }
+
     const FONTS = ['atual', 'brittany', 'joeb', 'pixel'];
     if (!document.body.getAttribute('data-font')) document.body.setAttribute('data-font', 'atual');
     let fSaved = null;
