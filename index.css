@@ -476,15 +476,18 @@ body[data-cards="editorial"] .project-card:first-child .project-visual img, body
     body[data-layout="brittany"] .sidebar h1 { white-space: normal; font-size: 2rem; }
 }
 
-/* Teste vertical mobile: cards classicos (imagem sobre o texto) em vez de fileira.
-   Vem por ultimo para vencer as regras de fileira acima. */
+/* Mobile: card em fileira vira vertical (imagem acima, texto abaixo).
+   E o formato padrao do mobile, nao depende de classe JS nem de localStorage.
+   Vem por ultimo para vencer as regras de fileira acima. Só no mobile. */
 @media screen and (max-width: 900px) {
-    body.mobile-stack .project-card { display: block; }
-    body.mobile-stack .project-visual { height: auto; min-height: 0; aspect-ratio: 16 / 9; }
+    body[data-cards="linhas"] .project-card, body.mobile-stack .project-card { display: block; grid-template-columns: none; }
+    body[data-cards="linhas"] .project-visual, body.mobile-stack .project-visual { height: auto; min-height: 0; aspect-ratio: 16 / 9; }
+    body[data-cards="linhas"] .project-visual img, body[data-cards="linhas"] .project-visual video,
     body.mobile-stack .project-visual img, body.mobile-stack .project-visual video { object-fit: cover; }
-    body.mobile-stack .project-info { position: static; background: var(--card); color: var(--ink); padding: 1.5rem; }
+    body[data-cards="linhas"] .project-info, body.mobile-stack .project-info { position: static; background: var(--card); color: var(--ink); padding: 1.2rem; }
+    body[data-cards="linhas"] .project-info p, body[data-cards="linhas"] .project-info h3,
     body.mobile-stack .project-info p, body.mobile-stack .project-info h3 { color: inherit; }
-    body.mobile-stack .project-link { color: var(--ink); }
+    body[data-cards="linhas"] .project-link, body.mobile-stack .project-link { color: var(--ink); }
 }
 
 /* Painel de teste das thumbnails antigas (temporario) */
